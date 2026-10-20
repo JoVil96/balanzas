@@ -1,0 +1,15 @@
+# Binarios generados
+*.exe
+
+# Datos y registros locales
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.err
+
+# Configuración específica del equipo
+config.yaml
+
+# Salidas de herramientas
+graphify-out/

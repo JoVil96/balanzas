@@ -1,0 +1,36 @@
+serial:
+  port: "COM3"
+  baud_rate: 9600
+  data_bits: 8
+  parity: "N"
+  stop_bits: 1
+  read_timeout_ms: 500
+
+parser:
+  # generic: CAS/Digi and compatible frames such as "= 000.02"
+  # lexus_matrix_zero: also decodes the reversed Adr=99 frame "=20.000"
+  model: "generic"
+  pattern: "(?P<stable>=)\\s*(?P<weight>\\d+\\.\\d+)"
+  default_unit: "kg"
+
+printer:
+  port: "COM4"
+  baud_rate: 9600
+  data_bits: 8
+  parity: "N"
+  stop_bits: 1
+  company: "Mi empresa"
+  ruc: "0999999999001"
+  activity: "Exportadora de cacao"
+  operator: "Nombre del operador"
+  title: "TICKET DE PESAJE"
+  footer: "Gracias por su trabajo"
+
+storage:
+  path: "balanza.db"
+
+api:
+  enabled: true
+  address: "127.0.0.1:8765"
+  allowed_origins:
+    - "http://127.0.0.1:5173/"
